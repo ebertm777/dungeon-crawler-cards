@@ -17,7 +17,7 @@ O usuário pode selecionar um monstro para enfrentar, e o sistema calculará aut
 ## 💡 Como usar
 
 1. Clone o repositório:
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone [Neste Repo](https://github.com/ebertm777/dungeon-crawler-cards)
 
 2. Instale as dependências:
 npm install
@@ -45,3 +45,5 @@ acesse o app em http://localhost:3000
 
 - JavaScript (ES6+) — linguagem principal da lógica da aplicação.
 
+
+(Ainda em construção, conmforme eu tiver mais ideias vou implementando)
