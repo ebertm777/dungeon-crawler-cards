@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⚔️ Simulador de Batalha RPG
 
-## Getting Started
+Este projeto é um simulador de batalhas de RPG em que um grupo de aventureiros enfrenta monstros aleatórios da API pública de D&D 5e.
 
-First, run the development server:
+O usuário pode selecionar um monstro para enfrentar, e o sistema calculará automaticamente o nível de poder da party com base em estatísticas aleatórias de seus membros. O resultado da batalha é narrado com recompensas temáticas dependendo do desfecho.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🧙 Funcionalidades
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Lista aleatória de monstros buscados da [D&D 5e API](https://www.dnd5eapi.co/)
+- Exibição de detalhes do monstro selecionado
+- Cálculo de dificuldade do boss com base no challenge rating
+- Simulação do poder da party com base em estatísticas aleatórias
+- Atribuição de nomes de fantasia aleatórios aos personagens
+- Resultado dinâmico da batalha com narração final
+- Interface estilizada com Tailwind CSS
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 💡 Como usar
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone o repositório:
+git clone https://github.com/seu-usuario/seu-repositorio.git
 
-## Learn More
+2. Instale as dependências:
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+3. Inicie o projeto:
+acesse o app em http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🧟 Exemplo de uso
+1. Escolha um dos monstros da lista.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Clique em "Lutar contra este monstro".
 
-## Deploy on Vercel
+3. Veja o resultado da batalha com narração dos personagens.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🧰 Tecnologias usadas
+- React — para a construção da interface e lógica de estado.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js (app router) — para renderização otimizada no cliente.
+
+- Tailwind CSS — para estilização rápida e responsiva.
+
+- D&D 5e API — como fonte de dados de monstros.
+
+- JavaScript (ES6+) — linguagem principal da lógica da aplicação.
+
