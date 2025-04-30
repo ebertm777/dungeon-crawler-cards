@@ -43,3 +43,5 @@ acesse o app em http://localhost:3000
 
 - JavaScript (ES6+) — linguagem principal da lógica da aplicação.
 
+
+(Ainda em construção, conmforme eu tiver mais ideias vou implementando)
