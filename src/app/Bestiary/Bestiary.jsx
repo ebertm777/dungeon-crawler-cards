@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 // Importa seus dados
 const Party = [
@@ -174,7 +175,7 @@ export default function BattleSimulator() {
     fetchMonsters();
   }, []);
 
-  // Fetch detalhes ao selecionar
+  // Fetch dos detalhes ao selecionar
   async function selectMonster(index) {
     setLoading(true);
     const res = await fetch(`https://www.dnd5eapi.co${monsters[index].url}`);
@@ -196,7 +197,7 @@ export default function BattleSimulator() {
     };
 
     const bossName = selected.name;
-    const bossDifficulty = selected.challenge_rating * 8; // exemplo de cálculo
+    const bossDifficulty = selected.challenge_rating * 8; // exemplo de cálculo do chalenge
     const dungeonName = "API Dungeon";
 
     const partyMembersRandomStats = Party.map(getRandomStatsSum);
@@ -216,15 +217,15 @@ export default function BattleSimulator() {
       return character;
     });
 
-    // Gerando a narração
+    // Gerador da narração
     const narration = await Promise.all(
       characters.map(async (char) => {
-        await delay(300); // simula tempo de narração
+        await delay(300); // simula tempo de narração mais ou menos isso
         return `🧝 ${char.role} ${char.name}: contribuiu com ${char.stats} | recompensa: ${char.reward}`;
       })
     );
 
-    // Narração final
+    // Narração final, vou melhorar isso aqui
     const finalNarration = `
         The party fought a formidable foe, ${bossName}, in the dungeon ${dungeonName}.
         Eventually, they ${finalResult}, and were sent to ${
@@ -233,7 +234,7 @@ export default function BattleSimulator() {
         The party total power was ${partyPowerLevel} and the boss Difficulty was ${bossDifficulty}.
       `;
 
-    // Atualiza o estado com a narração final
+    // Atualiza o estado e a narração final
     setResult({
       narration,
       bossName,
@@ -243,7 +244,7 @@ export default function BattleSimulator() {
       outcome: finalResult,
       bossType: selected.type,
       bossHP: selected.hit_points,
-      finalNarration, // Adicionando a narração final
+      finalNarration, // Adicionando a narração do resultado final
     });
   }
 
@@ -253,14 +254,22 @@ export default function BattleSimulator() {
 
       {/* Lista de monstros obtida da api */}
       <div className="grid grid-cols-2 gap-4 mb-6">
-        {monsters.map((m, i) => (
-          <button
-            key={m.index}
-            className="bg-gray-800 p-4 rounded hover:bg-gray-700"
-            onClick={() => selectMonster(i)}
+        {monsters.map((monster, index) => (
+          <motion.div
+            key={monster.index}
+            className="bg-gray-800 text-white p-4 rounded-xl shadow-md text-center font-bold"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.4 }}
           >
-            {m.name}
-          </button>
+            <button
+              //   key={m.index}
+              className="bg-gray-800 p-4 rounded hover:bg-gray-700 cursor-pointer"
+              onClick={() => selectMonster(index)}
+            >
+              {monster.name}
+            </button>
+          </motion.div>
         ))}
       </div>
 
