@@ -39,11 +39,11 @@ acesse o app em http://localhost:3000
 
 - Tailwind CSS — para estilização rápida e responsiva.
 
-- Framer Motion - para interface muito mais viva
+- Framer Motion - para interface muito mais viva.
 
 - D&D 5e API — como fonte de dados de monstros.
 
 - JavaScript (ES6+) — linguagem principal da lógica da aplicação.
 
 
-(Ainda em construção, conmforme eu tiver mais ideias vou implementando)
+(Ainda em construção, conforme eu tiver mais ideias vou implementando)
