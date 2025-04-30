@@ -184,7 +184,7 @@ export default function BattleSimulator() {
     setLoading(false);
   }
 
-  // Função para iniciar o combate
+  // Função para iniciar o combate 
   async function handleFight() {
     if (!selected) return;
 
@@ -197,7 +197,7 @@ export default function BattleSimulator() {
     };
 
     const bossName = selected.name;
-    const bossDifficulty = selected.challenge_rating * 8; // exemplo de cálculo do chalenge
+    const bossDifficulty = selected.challenge_rating * 10; // exemplo de cálculo do chalenge
     const dungeonName = "API Dungeon";
 
     const partyMembersRandomStats = Party.map(getRandomStatsSum);
