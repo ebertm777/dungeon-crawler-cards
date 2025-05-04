@@ -125,7 +125,19 @@ const fantasyNames = [
   "Nimue",
 ];
 
+const Dungeons = [
+  { dungeon: "Cave" },
+  { dungeon: "Temple" },
+  { dungeon: "Swamp" },
+  { dungeon: "Island" },
+  { dungeon: "Forest" },
+  { dungeon: "Mountain" },
+  { dungeon: "Void" },
+  { dungeon: "Plains" },
+];
+
 const Reward = ["Oblivion 💀", "Glory 👼"];
+const dungeon = Dungeons[Math.floor(Math.random() * Dungeons.length)];
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -175,7 +187,7 @@ export default function BattleSimulator() {
     fetchMonsters();
   }, []);
 
-  // Fetch dos detalhes ao selecionar
+  // Fetch ao selecionar
   async function selectMonster(index) {
     setLoading(true);
     const res = await fetch(`https://www.dnd5eapi.co${monsters[index].url}`);
@@ -184,7 +196,7 @@ export default function BattleSimulator() {
     setLoading(false);
   }
 
-  // Função para iniciar o combate 
+  // Função para iniciar o combate
   async function handleFight() {
     if (!selected) return;
 
@@ -197,8 +209,8 @@ export default function BattleSimulator() {
     };
 
     const bossName = selected.name;
-    const bossDifficulty = selected.challenge_rating * 10; // exemplo de cálculo do chalenge
-    const dungeonName = "API Dungeon";
+    const bossDifficulty = selected.challenge_rating * 8; // exemplo de cálculo do chalenge
+    const dungeonName = dungeon.dungeon;
 
     const partyMembersRandomStats = Party.map(getRandomStatsSum);
     const partyPowerLevel = partyMembersRandomStats.reduce((a, b) => a + b, 0);
