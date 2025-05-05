@@ -262,28 +262,30 @@ export default function BattleSimulator() {
 
   return (
     <div className="bg-black text-white p-6 min-h-screen">
-      <h1 className="text-3xl font-bold mb-4">⚔️ Simulador de Batalha RPG</h1>
+      <h1 className="text-3xl font-bold mb-4">
+        ⚔️ Simulador de Batalha RPG (Em Construção)
+      </h1>
 
       {/* Lista de monstros obtida da api */}
       <div className="grid grid-cols-2 gap-4 mb-6">
-        {monsters.map((monster, index) => (
-          <motion.div
-            key={monster.index}
-            className="bg-gray-800 text-white p-4 rounded-xl shadow-md text-center font-bold"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.4 }}
-          >
-            <button
-              //   key={m.index}
-              className="bg-gray-800 p-4 rounded hover:bg-gray-700 cursor-pointer"
-              onClick={() => selectMonster(index)}
-            >
-              {monster.name}
-            </button>
-          </motion.div>
-        ))}
-      </div>
+  {monsters.map((monster, index) => (
+    <motion.div
+      key={monster.index}
+      className="bg-[#36454f] text-white p-4 rounded-xl shadow-md text-center font-bold h-full"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1, duration: 0.4 }}
+    >
+      <button
+        className="bg-[#36454f] p-4 rounded cursor-pointer w-full h-full"
+        onClick={() => selectMonster(index)}
+      >
+        {monster.name}
+      </button>
+    </motion.div>
+  ))}
+</div>
+
 
       {loading && <p className="mb-4">Carregando monstro...</p>}
 
@@ -295,7 +297,7 @@ export default function BattleSimulator() {
           <p>HP: {selected.hit_points}</p>
           <button
             onClick={handleFight}
-            className="mt-3 px-4 py-2 bg-indigo-600 rounded hover:bg-indigo-500"
+            className="mt-3 px-4 py-2 rounded bg-[#662d91] hover:bg-[#230b35] text-white cursor-pointer"
           >
             Lutar contra este monstro
           </button>
@@ -303,7 +305,7 @@ export default function BattleSimulator() {
       )}
 
       {result && (
-        <div className="mt-6 bg-gray-800 p-4 rounded">
+        <div className="mt-6 bg-[#36454f] p-4 rounded">
           <h3 className="text-xl font-bold mb-2">📜 Resultado:</h3>
           <p>Dungeon: {result.dungeonName}</p>
           <p>
