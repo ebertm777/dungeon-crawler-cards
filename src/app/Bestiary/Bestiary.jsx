@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import '../globals.css';
 
 // Importa seus dados
 const Party = [
