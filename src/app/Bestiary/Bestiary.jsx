@@ -179,7 +179,6 @@ export default function BattleSimulator() {
       const res = await fetch("https://www.dnd5eapi.co/api/monsters");
       const data = await res.json();
 
-      // Embaralha a lista de monstros e pega 10 aleatórios
       const shuffled = data.results.sort(() => Math.random() - 0.5);
       const randomTen = shuffled.slice(0, 10);
 
